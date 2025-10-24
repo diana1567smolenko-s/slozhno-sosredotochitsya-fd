@@ -8,12 +8,28 @@
   --page-bg-color: rgba(0, 0, 40, 1); 
   --accent-color: #ff0070;
   --text-color: rgba(241, 178, 206, 1);
-
+  --subtitle-color: rgba(0, 0, 40, 1); 
+  --header-paragraph: rgba(0, 0, 40, 1);
+  --header-button: #ff0070;
+  --header-corner: #ff0070;
+  --title-color: #ff0070;
+  --outline-color: #ff0070;
+  --title-header-color:rgba(219, 0, 255, 1);
 }
 
 @media (prefers-color-scheme: light) {
   :root { 
     --page-bg-image: url("../images/cover-image-light.png");
     --page-bg-color: rgba(255, 241, 247, 1); 
+    --subtitle-color: rgba(53, 52, 48, 1);
+    --accent-color: rgba(255, 141, 203, 1);
+    --text-color: rgba(53, 52, 48, 1);
+    --header-paragraph: rgba(53, 52, 48, 1);
+    --header-button: rgba(53, 52, 48, 1); 
+    --header-corner: rgba(53, 52, 48, 1);
+    --title-color: rgba(53, 52, 48, 1);
+    --outline-color: rgba(53, 52, 48, 1);
+    --title-header-color: rgba(255, 194, 230, 1);
+
   }
 }

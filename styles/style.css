@@ -4,35 +4,44 @@
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-attachment: fixed;
   background-color: var(--page-bg-color); 
+  background-image: var(--page-bg-image);
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .header {
-  background-image: var(--page-bg-image);
   background-attachment: fixed;
   display: grid;
-  min-height: 406px;
+  height: 100vh;
+  min-height: 668px;
   position: relative;
+  grid-template-rows: auto auto minmax(0, 1fr);
 }
 
 .decorated-zone {
   margin-bottom: 1.8rem;
 }
 
+a{ 
+  text-shadow: 2px 1px var(--accent-color);
+  text-decoration: none;
+}
 
 .page__title {
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem); 
+  font-size: var(--logo-size); 
   font-family: "IBM Plex Mono", sans-serif;
   color: var(--title-header-color);
   text-shadow: 4px 4px 0 var(--accent-color);
   font-weight: 700;
   line-height: 83%;
+  left: 15px; 
 }
 
 
-.header-corner::before {
+.decorative-corner::before {
   content: "";
   position: absolute;
-  top: 20px; 
+  top: 10px; 
   right: 0px; 
   width: 25px;  
   height: 25px; 
@@ -41,10 +50,10 @@
   border-top-right-radius: 0; 
 }
 
-.header-corner::after {
+.decorative-corner::after {
   content: "";
   position: absolute;
-  bottom: 0px;
+  bottom: 10px;
   width: 25px;
   height: 25px;
   border-bottom: 1px solid var(--header-corner);
@@ -53,11 +62,9 @@
 
 .block__focus {
   display: grid;
-  padding-left: 1.4rem;
   grid-template-columns: 30% 1fr;
   align-items: start;
   gap: 2.4rem;
-  padding-right: 1rem;
   padding-bottom: 3.7rem;
 }
 
@@ -80,10 +87,8 @@
   list-style: none;
   right: 20px;
   flex-direction: column;
-  position: absolute;
   top: 60px;
-  gap: 13px;
-  height: 30px;
+  gap: 11px;
   margin-top: 100px;
 }
 
@@ -105,30 +110,24 @@
   text-align: end;
   transform: none;
   right: 30px;
-  top: 20px;
+  top: 10px;
+  display: var(--light-visibility); 
 }
 
 .decor__item-rec::after {
   content: "";
-  margin-left: 4px;
+  margin-left: 12px;
   background-color: var(--accent-color);
-  top: 6px;
+  top: 7px;
   border-radius: 50%;
-  box-shadow: 0 0 8px var(--accent-color);
-  width: 12px;
-  height: 12px;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  width: 10px;
+  height: 10px;
   position: absolute;
 }
 
-.page__title {
-  margin-top: 120px;
-}
-
-.header {
-  height: 668px;
-}
-
 .header__theme-menu-button { 
+  width: 70px;
   font-family: "IBM Plex Mono", sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -138,9 +137,9 @@
   border: none;
 }
 
-.header__theme-menu-button:hover {
+.header__theme-menu-button:hover, 
+.header__theme-menu-button_active {
   outline: 0.1px solid var(--outline-color);
-  outline-offset: 3px;
 }
 
 .header__theme-menu-button:focus {
@@ -151,11 +150,9 @@
 
 .block__concentration{
   display: grid;
-  padding-left: 1.4rem;
   grid-template-columns: 32% 1fr;
   align-items: start;
   gap: 1.2rem;
-  padding-right: 1.1rem;
   padding-bottom: 3.7rem;
   margin-top: 1.6rem;
 }
@@ -165,8 +162,6 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
   align-items: start;
-  padding-left: 1.3rem;
-  padding-right: 1rem;
   margin-bottom: 3.8rem;
   margin-top: 1.5rem;
 }
@@ -175,7 +170,7 @@
   grid-column: 1 / -1;
 }
 
-.title_five_tips {
+.title__tips {
   margin-bottom: 1.2rem;
 }
 
@@ -210,9 +205,9 @@
   font-family: "IBM Plex Mono", sans-serif;
   font-weight: 400;
   font-size: 18px;
-  line-height: 23.3px;
+  line-height: 23.4px;
   color: var(--text-color);
-  padding-bottom: 1.2rem;
+  padding-bottom: 1.1rem;
 }
 
 .block_sub-subtitle {
@@ -220,13 +215,9 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 23.4px;
-  color: var(--page-bg-color);
+  color: var( --sub-subtitle-text);
 }
 
-.gallery {
-  padding-left: 1.3rem;
-  padding-right: 1rem;
-}
 
 .block__images { 
   display: grid;
@@ -240,96 +231,68 @@
 .item {
   background-position: center;
   background-size: 100%; 
+  background-size: cover;
 }
 
 .sunset {
   background-image: url('../images/sunset.png');
   grid-column: span 2; 
   grid-row: 1;
-  background-size: cover;
 }
   
 .ice-cream {
   background-image: url('../images/ice-cream.png');
   grid-column: 3;
   grid-row: span 2;
-  background-size: cover;
 }
   
 .tape {
   background-image: url('../images/tape.png');
   grid-row: span 3;
   grid-column: 1;
-  background-size: cover;
 }
   
 .books {
   background-image: url('../images/books.png');
   grid-row: 2;
   grid-column: 2;
-  background-size: cover;
 }
   
 .street {
   background-image: url('../images/street.png');
   grid-column: span 2; 
   grid-row: span 2;
-  background-size: cover;
 }
 
-.footer {
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+footer {
+  font-size: var(--logo-size);
   font-family: "IBM Plex Mono", sans-serif;
   color: var(--title-header-color);
   text-shadow: 4px 4px 0 var(--accent-color);
   font-weight: 700;
   line-height: 83%;
   display: flex;
-  justify-content: center;
   align-items: center; 
   position: relative;
-}
+} 
 
-.footer-corner::before {
-  content: "";
-  position: absolute;
-  top: 58px;  
-  right: 0px; 
-  width: 25px; 
-  height: 25px; 
-  border-top: 1px solid var(--accent-color);  
-  border-right: 1px solid var(--accent-color); 
-  border-top-right-radius: 0;  
-}
-
-.footer-corner::after {
-  content: "";
-  position: absolute;
-  bottom: 63px;
-  left: 0px;
-  width: 25px;
-  height: 25px;
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+.footer h4 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 /* !!!!!!!!!!! 375 !!!!!!!!!!! */
 
 @media (max-width: 375px) {
   .header {
-    padding-left: 10px;
+    height: 50vh;
   }
+  .footer {
+    min-height: 668px;
+   }
 
-  .page__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    margin-top: 187px;
-    margin-left: -14px;
-  }
-
-  .hidden { 
-    display: none; 
-  }
-  
+ 
   .grid__fix {
     display: grid;
     grid-template-columns: 1fr;
@@ -337,19 +300,29 @@
 
   .header__pharagraph {
     grid-column: 1;
-    margin-left: -11px;
-    height: 115px;
     width: 355px;
+    margin-top: 56px;
   }
 
   .header__theme-menu-list {
-    margin-top: 20px;
-    right: 10px;
+    margin-top: 73px;
+  }
+
+  .page__title{
+    margin-top: 65px;
   }
 
   .page {
-    padding-right: 0.6rem;
-    padding-left: 0.6rem;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .decor__item-rec {
+    right: 32px;
+  }
+
+  .decor__item-rec::after {
+    margin-left: 10px;
   }
 
   .block__focus {
@@ -358,7 +331,7 @@
     grid-template-rows: unset;
     gap: 0;
     padding:0%; 
-    margin-top: 3rem;  
+    margin-top: 2.5rem;  
   }
 
   .block__concentration__tips,
@@ -401,7 +374,7 @@
   .block__images {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.6rem;
     width: 100%;
     height: auto;
     margin-top: 0%;
@@ -416,6 +389,7 @@
     padding-left: 0%;
     padding-right: 0%;
     margin-top: 2rem;
+    margin-bottom: 44px;
   }
 
   .sunset{
@@ -437,47 +411,40 @@
   .street{
     aspect-ratio: 3 / 2;
   }
-
-  .footer{
-    font-family: "IBM Plex Mono", sans-serif;
-    font-weight: 700;
-    font-style: Bold;
-    font-size: 116px; 
-    line-height: 83%;
-    height: 48rem; 
-  } 
 }
 
 /* !!!!!!!!!!! 768 !!!!!!!!!!! */
 
 
 @media (min-width: 768px) {
-  .header { 
-  height: 1024px;
+  .header, 
+  .footer { 
+  min-height: 1024px;
+  height: 20vh;
   }
 
-  .header-corner::before{
-    right: 20px;
+  .decorative-corner::before{
+    top: 20px;
   }
 
-  .header-corner::after{
-    left: 20px;
-    bottom: 22px;
+  .decorative-corner::after{
+    bottom: 20px;
+  }
+
+  .page__title{
+    margin-top: 180px;
+    margin-left: -20px;
   }
 
   .decor__item-rec{
-    right: 48px;
+    top: 20px;
   }
-
-  .page__title {
-    margin-top: 295px;
-  } 
 
   .block__concentration__tips { 
     display: flex;
     flex-direction: column;
     gap: 0.6rem; 
-    margin-bottom: 3.8rem;
+    margin-bottom: 3.4rem;
   }
 
   .title_concentration__tips{
@@ -485,92 +452,55 @@
   }
    
   .block__focus{
-    margin-top: 3.6rem;
+    margin-top: 3.7rem;
     padding-bottom: 2.4rem;
+  }
+
+  .gallery{
+    margin-top: 3px;
   }
    
   .block__images {
-    height: 49rem;
+    min-height: 49rem;
+    margin-top: 20px;
+    margin-bottom: 57px;
   }
 
   .header__theme-menu-list {
-    right: 0px;
-    top: 89px; 
-    padding-right: 27px;
-  }
-
-  .multitasking{ 
-    margin-top: 9px;
-  }
-
-  .food { 
-    margin-top: -8px;
-  }
-
-  .gadgets{ 
-    margin-top: -9px;
+    margin-top: 190px;
   }
   
   .header__pharagraph {
-    width: 95%;
-    margin-bottom: 20px;
-  }
-
-  .gallery {
-    padding-top: 0.4rem;
-  }
-
-  .footer {
-    font-family: "IBM Plex Mono", sans-serif;
-    font-weight: 700;
-    font-size: 120px;
-    line-height: 83%;
-    letter-spacing: 0%;
-    margin-top: 60px;
-    height: 1024px;
-  }
-
-  .footer-corner::before {
-    top: 18px;
-    right: 16px; 
-  }
-
-  .footer-corner::after {
-    bottom: 23px;
-    left: 18px;
+    grid-column: 2;
+    margin-top: 157px;
   }
 }
 
 /* !!!!!!!!!!! 1024+ !!!!!!!!!!! */
 
 @media (min-width: 1024px) {
-  .header {
-    height: 768px;
+  .header,
+  .footer {
+   min-height: 768px;
+   height: 60vh; 
   }
   
-  .food{ 
-    margin-top: 0px;
+  .header__pharagraph{ 
+    margin-top: 118px;
+    grid-column: 2;
   }
 
-  .gadgets{ 
-    margin-top: 0px;
-  }
-
-  .multitasking{ 
-    margin-top: 0px;
-  }
-  
   .decor__item-rec {
     transform: translateY(-50%);
+    top: 32px; 
   }
 
   .header__theme-menu-list {
     flex-direction: row;
     list-style: none;
-    position: relative;
-    gap: 1.6em;
     top: 21px;
-    margin-top: 0;
+    margin-top: 20px;
+    margin-right: 12rem;
     right: 79px;
   }
 
@@ -581,16 +511,11 @@
     justify-content: center;
     position: relative;
     margin-left: 12rem;
-    height: 30px;
-  }
-
-  .decor__item-rec {
-    top: 30px;
+    flex-shrink: 0;
   }
 
   .page__title {
-    margin-top: 180px;
-    font-size: 157px;
+    margin-top: 272px;
   }
 
   .block__concentration__tips{
@@ -606,15 +531,116 @@
   }
 
   .block__images{
-    height: 66rem;
+    min-height: 1050px;
   }
 
   .gallery{
     padding-top: 0px;
   }
-
-  .footer{ 
-    font-size: 157px;
-    height: 768px;
-  }
 }
+
+/* !!!!!!!!!!! 527 - 375 !!!!!!!!!!! */
+
+@media (max-width: 527px) and (min-width: 376px) {
+
+  body.page {
+    overflow-x: auto;
+  }
+
+  .page {
+    min-width: 527px;
+    margin: 0 auto;
+  }
+
+  main,
+  header {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+  }
+
+  .footer {
+    min-height: 668px;
+   }
+}
+
+/* !!!!!!! 376px – 767px !!!!!! */ 
+
+@media (max-width: 767px) and (min-width: 376px) {
+
+  body.page {
+    overflow-x: auto; 
+    overflow-y: visible;
+  }
+
+  .page {
+    min-width: 527px;
+    margin: 0 auto;
+  }
+
+  .page__title{
+    margin-top: 65px;
+  }
+
+  .header__pharagraph {
+    grid-column: 1;
+    width: 355px;
+    margin-top: 56px;
+  }
+
+  .header {
+    min-height: 668px;
+    height: auto;
+    background-attachment: scroll; 
+  }
+
+  .gallery {
+    padding-left: 1.3rem;
+    padding-right: 1rem;
+    margin-top: 2rem;
+  }
+
+  .block__images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(150px, auto);
+    gap: 1rem;
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+  }
+
+  .item {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+  }
+
+  .item.sunset{ 
+    min-height: 200px; 
+    grid-column: span 2;
+  }
+
+  .item.ice-cream{ 
+    min-height: 200px; 
+    grid-row: span 2; 
+  }
+
+  .item.tape { 
+    min-height: 250px; 
+  }
+
+  .item.books{ 
+    min-height: 180px; 
+  }
+
+  .item.street{ 
+    min-height: 220px; 
+    grid-column: span 2; 
+  }
+
+  .footer {
+    min-height: 668px;
+   }
+}
+

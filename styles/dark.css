@@ -16,6 +16,8 @@
   --title-color: #ff0070;
   --outline-color: #ff0070;
   --title-header-color:rgba(219, 0, 255, 1);
+  --sub-subtitle-text: rgba(0, 0, 40, 1); 
+  --light-visibility: block; 
 }
 
 

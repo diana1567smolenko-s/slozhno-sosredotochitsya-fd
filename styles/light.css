@@ -11,15 +11,11 @@
   --text-color: rgba(53, 52, 48, 1); 
   --subtitle-color: rgba(53, 52, 48, 1);
   --header-paragraph: rgba(53, 52, 48, 1);
+  --header-button: rgba(53, 52, 48, 1);
   --header-corner: rgba(53, 52, 48, 1);
   --title-color: rgba(53, 52, 48, 1);
   --outline-color: rgba(53, 52, 48, 1);
   --title-header-color: rgba(255, 194, 230, 1);
-
+  --sub-subtitle-text: rgba(53, 52, 48, 1);
+  --light-visibility: none; 
 } 
-
-@media (prefers-color-scheme: light) { 
-.decor__item-rec {
-display: none;
-}
-}

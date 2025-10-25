@@ -22,9 +22,17 @@
   margin-bottom: 1.8rem;
 }
 
-a{ 
+.link { 
   text-shadow: 2px 1px var(--accent-color);
   text-decoration: none;
+}
+.link:hover{ 
+  text-decoration: underline;
+  color: var(--link-color);
+}
+
+.link:focus{ 
+  outline: 1px solid var(--link-color);
 }
 
 .page__title {
@@ -36,7 +44,6 @@ a{
   line-height: 83%;
   left: 15px; 
 }
-
 
 .decorative-corner::before {
   content: "";

@@ -14,11 +14,15 @@
   --header-corner: #ff0070;
   --title-color: #ff0070;
   --outline-color: #ff0070;
+  --outline-color-hover: rgba(255, 0, 112, 0.4); 
   --title-header-color:rgba(219, 0, 255, 1);
   --sub-subtitle-text: rgba(0, 0, 40, 1); 
   --light-visibility: block; 
   --link-color: rgba(241, 178, 206, 1); 
+
+
 }
+  
 
 @media (prefers-color-scheme: light) {
   :root { 
@@ -32,6 +36,7 @@
     --header-corner: rgba(53, 52, 48, 1);
     --title-color: rgba(53, 52, 48, 1);
     --outline-color: rgba(53, 52, 48, 1);
+    --outline-color-hover: rgba(50, 49, 45, 0.4); 
     --title-header-color: rgba(255, 194, 230, 1);
     --sub-subtitle-text: rgba(53, 52, 48, 1); 
     --light-visibility: none; 
